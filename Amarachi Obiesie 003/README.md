@@ -36,6 +36,5 @@ for item in os.listdir(path):
         imResize = im.resize((100,100), Image.ANTIALIAS)
         imResize.save(f + ' resized.jpg', 'JPEG', quality=100)
 
-resize() 
 
  
