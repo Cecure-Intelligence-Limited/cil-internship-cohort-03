@@ -1,41 +1,39 @@
-# Creation of template in Aws Console
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Metadata": {
         "AWS::CloudFormation::Designer": {
-            "82041938-4632-4af0-ae4b-b504cfe05be2": {
+            "35f8a2f5-3e36-4535-9baa-a4feafba9ea3": {
                 "size": {
                     "width": 60,
                     "height": 60
                 },
                 "position": {
-                    "x": 690,
-                    "y": 70
+                    "x": 440,
+                    "y": 10
                 },
                 "z": 0,
                 "embeds": []
             },
-            "b699ddad-378f-4b9e-bb10-7a4ceb66c4e7": {
+            "b2d1275e-399b-4fa4-a48a-151ed7851672": {
                 "size": {
                     "width": 60,
                     "height": 60
                 },
                 "position": {
-                    "x": 550,
-                    "y": 110
+                    "x": 360,
+                    "y": 90
                 },
-                "z": 0,
-                "embeds": []
+                "z": 0
             }
         }
     },
     "Resources": {
-        "EC2Instance": {
-            "Type": "AWS::EC2::Instance",
+        "Lambda": {
+            "Type": "AWS::Lambda::Function",
             "Properties": {},
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
-                    "id": "82041938-4632-4af0-ae4b-b504cfe05be2"
+                    "id": "35f8a2f5-3e36-4535-9baa-a4feafba9ea3"
                 }
             }
         },
@@ -44,7 +42,7 @@
             "Properties": {},
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
-                    "id": "b699ddad-378f-4b9e-bb10-7a4ceb66c4e7"
+                    "id": "b2d1275e-399b-4fa4-a48a-151ed7851672"
                 }
             }
         }
