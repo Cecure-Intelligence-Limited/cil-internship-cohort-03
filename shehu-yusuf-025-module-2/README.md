@@ -130,8 +130,8 @@ def lambda_handler(event, context):
 
 provider "aws" {
   region = "${var.aws_region}"
-  access_key = "AKIA2VHD6QPYB5U5F4I3"
-  secret_key = "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"
+  access_key = "shehu-yusuf"
+  secret_key = "025"
 }
 
 provider "archive" {}
