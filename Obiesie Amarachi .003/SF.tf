@@ -1,7 +1,7 @@
 module "step_function" {
   source = "terraform-aws-modules/step-functions/aws"
 
-  name       = "my-step-function"
+  name       = "my-first-function"
   definition = <<EOF
 {
   "Comment": "A Hello World example of the Amazon States Language using Pass states",
