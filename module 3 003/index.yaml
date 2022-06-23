@@ -1,4 +1,0 @@
-string ='My Website Home Page'
-  
-# lambda returns a function object
-(lambda string : print(string))(string)
