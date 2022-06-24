@@ -1,4 +1,4 @@
-##	Question 1. Explain the difference between cloud data engineering and Data engineering.
+#	Question 1. Explain the difference between cloud data engineering and Data engineering.
 
 # Data engineering / Cloud data engineering
 
@@ -14,7 +14,7 @@ Data Engineering
 Is infrastructure focused and work mostly on-premise by designing and building system, setting up hardware and software infrastructure to scaling for collecting, storing, moving and analyzing data.
 >>	Managed data across multiple on-premise infrastructure
 
-## List out the technologies used in these two cases.
+# List out the technologies used in these two cases.
 
 +	Amazon S3 
 +	AWS Glue
@@ -36,7 +36,7 @@ Is infrastructure focused and work mostly on-premise by designing and building s
 +	Scala
 
 
-## Question 2. Write a class for ingesting and extracting data from an s3 bucket. Use the AWS SoapAPI for s3
+# Question 2. Write a class for ingesting and extracting data from an s3 bucket. Use the AWS SoapAPI for s3
 
 Inline 'code'
 
@@ -84,7 +84,7 @@ my_class.data_extracting('Shehu-cil-bucket', 'shehu_doc.json', True, True, True,
                          'secretKey', 'soupapi_policy')
                          
 
-## QUESTION 3.	Explain some software engineering practices for Data Engineers.
+# QUESTION 3.	Explain some software engineering practices for Data Engineers.
 
 Software engineer (infrastructure or platform engineers)
 The maintenance of servers and systems that deliver information to the user, by building operating systems for user-facing applications, setting up networks, software testing and debugging, software configuration management and maintaining, software design and IT documentation. Data engineers build systems that can store consolidate and retrieve data that is required for the systems and applications built by software engineers.
