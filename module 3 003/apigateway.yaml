@@ -1,0 +1,68 @@
+{
+  "Version": "2012-10-17",
+  "Id": "default",
+  "Statement": [
+    {
+      "Sid": "lambda-3b0ae7a4-21be-46ef-a7af-de9bf5d4a775",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceAccount": "970025564377"
+        },
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:s3:::cf-templates-904bfglshlve-us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "lambda-7e72720f-60b5-4de7-bcf7-a322006b98e5",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "apigateway.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:execute-api:us-east-1:970025564377:oxo88zic3m/*/*/myFirstFunction"
+        }
+      }
+    },
+    {
+      "Sid": "ec059c8b-a259-4ab2-beb1-73bd273ee055",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "apigateway.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:execute-api:us-east-1:970025564377:oxo88zic3m/*/GET/myFirstFunction"
+        }
+      }
+    },
+    {
+      "Sid": "myCustom",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "kinesis.amazonaws.com"
+      },
+      "Action": "lambda:ListTags",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:iam::970025564377:role/service-role/myFirstFunction-role-dthno85t"
+        }
+      }
+    }
+  ]
+}
+
+
+
