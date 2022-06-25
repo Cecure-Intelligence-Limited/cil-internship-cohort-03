@@ -1,0 +1,160 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+  }
+}
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_lambda_function" "myLambda" {
+  function_name = "MyFirstFunction"
+
+  
+  s3_bucket = "https://us-east-1.console.aws.amazon.com/s3/buckets/cf-templates-904bfglshlve-us-east-1?region=us-east-1"
+  s3_key    = "hello.zip"
+
+  
+  handler = "hello.handler"
+  runtime = "nodejs12.x"
+
+  role = "myFirstFunction-role-dthno85t"
+}
+
+{
+  "Version": "2012-10-17",
+  "Id": "default",
+  "Statement": [
+    {
+      "Sid": "lambda-3b0ae7a4-21be-46ef-a7af-de9bf5d4a775",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceAccount": "970025564377"
+        },
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:s3:::cf-templates-904bfglshlve-us-east-1"
+        }
+      }
+    },
+    {
+      "Sid": "lambda-7e72720f-60b5-4de7-bcf7-a322006b98e5",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "apigateway.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:execute-api:us-east-1:970025564377:oxo88zic3m/*/*/myFirstFunction"
+        }
+      }
+    },
+    {
+      "Sid": "ec059c8b-a259-4ab2-beb1-73bd273ee055",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "apigateway.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction",
+      "Condition": {
+        "ArnLike": {
+          "AWS:SourceArn": "arn:aws:execute-api:us-east-1:970025564377:oxo88zic3m/*/GET/myFirstFunction"
+        }
+      }
+    }
+  ]
+}
+
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "myFirstFunction-API",
+    "description" : "Created by AWS Lambda",
+    "version" : "2022-06-22T22:37:16Z"
+  },
+  "servers" : [ {
+    "url" : "https://oxo88zic3m.execute-api.us-east-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "/default"
+      }
+    }
+  } ],
+  "paths" : {
+    "/myFirstFunction" : {
+      "get" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws"
+        }
+      },
+      "x-amazon-apigateway-any-method" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : { }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:970025564377:function:myFirstFunction/invocations",
+          "responses" : {
+            ".*" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "type" : "aws_proxy"
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Empty" : {
+        "title" : "Empty Schema",
+        "type" : "object"
+      }
+    },
+    "securitySchemes" : {
+      "api_key" : {
+        "type" : "apiKey",
+        "name" : "x-api-key",
+        "in" : "header"
+      }
+    }
+  }
+}
