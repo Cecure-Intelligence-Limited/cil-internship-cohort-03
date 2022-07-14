@@ -1,0 +1,113 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "f8d2fa92-2105-4fd8-9b19-b5cc8a0426d3": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 33.99999997019768,
+                    "y": 45.99999997019768
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "6411cf7c-8f7a-41fc-a1a8-cf360a8e8ed2": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 65.99999997019768,
+                    "y": 117.99999997019768
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "443e4fb4-794e-4d97-a8f8-9cbf9328b99f": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 129.99999997019768,
+                    "y": 29.999999970197678
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "8f00c23a-e24b-47fa-8655-e0b7806c65a6": {
+                "size": {
+                    "width": 140,
+                    "height": 140
+                },
+                "position": {
+                    "x": 210,
+                    "y": 70
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "0e4b7d57-7d51-4d9b-af17-88d5c9d7b162": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 405.9999999701977,
+                    "y": 35.99999997019768
+                },
+                "z": 0
+            }
+        }
+    },
+    "Resources": {
+        "CilAmarachiAPI": {
+            "Type": "AWS::ApiGateway::Account",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f8d2fa92-2105-4fd8-9b19-b5cc8a0426d3"
+                }
+            }
+        },
+        "CilAmarachiStage": {
+            "Type": "AWS::ApiGateway::Stage",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6411cf7c-8f7a-41fc-a1a8-cf360a8e8ed2"
+                }
+            }
+        },
+        "CilAmarachiAlarm": {
+            "Type": "AWS::CloudWatch::Alarm",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "443e4fb4-794e-4d97-a8f8-9cbf9328b99f"
+                }
+            }
+        },
+        "CilAmarachiLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "8f00c23a-e24b-47fa-8655-e0b7806c65a6"
+                }
+            }
+        },
+        "CilAmarachis3": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0e4b7d57-7d51-4d9b-af17-88d5c9d7b162"
+                }
+            }
+        }
+    }
+}
