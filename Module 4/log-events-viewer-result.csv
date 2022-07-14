@@ -1,2 +1,61 @@
 timestamp,message
 1657793993526,cil_amarachi_logevent
+
+#Event planner
+{
+  "version": "0",
+  "id": "28b3f61b-48ac-036d-22c9-4101c402bfdd",
+  "detail-type": "AccountChangeEvent",
+  "source": "aws.partner/salesforce.com/xxxxxxxxxxxx/xxxxxxxxxxx",
+  "account": "12345678921",
+  "time": "2022-04-06T20:24:01Z",
+  "region": "us-west-2",
+  "resources": [],
+  "detail": {
+    "payload": {
+      "Site": null,
+      "LastModifiedDate": "2022-04-06T20:23:57.000Z",
+      "Ownership": null,
+      "Description": null,
+      "Rating": null,
+      "JigsawCompanyId": null,
+      "Website": null,
+      "NumberOfEmployees": null,
+      "Name": "Test Update",
+      "BillingAddress": null,
+      "Industry": null,
+      "OwnerId": null,
+      "CreatedById": null,
+      "Phone": null,
+      "TickerSymbol": null,
+      "AccountSource": null,
+      "ParentId": null,
+      "Sic": null,
+      "AccountNumber": null,
+      "Type": null,
+      "ChangeEventHeader": {
+        "commitNumber": 12345,
+        "commitUser": "xxxxxxxxxx",
+        "sequenceNumber": 1,
+        "diffFields": [],
+        "entityName": "Account",
+        "changeType": "UPDATE",
+        "changedFields": ["0x400002"],
+        "changeOrigin": "com/salesforce/api/rest/54.0",
+        "transactionKey": "xxxxx-xxxx-xxxx-xxxx-xxxxx",
+        "nulledFields": [],
+        "commitTimestamp": 1234324,
+        "recordIds": ["0019A00000MWlhvQAD"]
+      },
+      "ShippingAddress": null,
+      "CreatedDate": null,
+      "SicDesc": null,
+      "Fax": null,
+      "LastModifiedById": null,
+      "AnnualRevenue": null,
+      "Jigsaw": null
+    },
+    "schemaId": "Jjksdah-sajkhd",
+    "id": "2d123se-f3a4-43d6-a4b8-xxxxxxx"
+  }
+}
